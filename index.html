@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Bazar Live • Satta Matka Chart</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #0d2e4e;
+      letter-spacing: -0.5px;
+    }
+    .logo-text span {
+      color: #c59b2b;
+    }
+    .date-badge {
+      background: #0d2e4e;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .card-header-custom {
+      background: linear-gradient(145deg, #13294b 0%, #1b3a62 100%);
+      color: white;
+      padding: 12px 20px;
+      font-weight: 600;
+      border-radius: 12px 12px 0 0 !important;
+    }
+    .table-chart {
+      margin-bottom: 0;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .table-chart th {
+      background-color: #1e3a5f;
+      color: white;
+      font-weight: 500;
+      text-align: center;
+      padding: 6px 3px;
+    }
+    .table-chart td {
+      text-align: center;
+      padding: 8px 3px;
+      background-color: white;
+      border-bottom: 1px solid #dee2e6;
+      font-weight: 500;
+    }
+    .market-name {
+      font-weight: 700;
+      color: #0a1e31;
+      background-color: #e9ecef !important;
+      text-align: left !important;
+      padding-left: 12px !important;
+      position: sticky;
+      left: 0;
+    }
+    .result-highlight {
+      background-color: #fffbeb;
+      font-weight: 700;
+      color: #b45309;
+    }
+    .table-responsive {
+      border-radius: 12px;
+      border: 1px solid #cfdde9;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+    }
+    .btn-social {
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+      border: none;
+    }
+    .btn-wa:hover {
+      background-color: #1da95c;
+      color: white;
+    }
+    .btn-tg {
+      background-color: #0088cc;
+      color: white;
+      border: none;
+    }
+    .btn-tg:hover {
+      background-color: #006699;
+      color: white;
+    }
+    .advertise-card {
+      background: white;
+      border-radius: 20px;
+      border-left: 6px solid #b8860b;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #5e6f7e;
+      border-top: 1px dashed #adb5bd;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #1e3a5f;
+    }
+    .btn-outline-gold {
+      border: 2px solid #c59b2b;
+      color: #0d2e4e;
+      font-weight: 600;
+      border-radius: 30px;
+    }
+    .btn-outline-gold:hover {
+      background-color: #c59b2b;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header / Navigation -->
+<nav class="navbar navbar-expand-lg bg-white py-2 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <!-- Simple Logo Placeholder (Playbazarlive Logo style) -->
+      <div class="bg-dark rounded-3 p-2 me-2 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: linear-gradient(145deg, #0b1f33, #1f3a57) !important;">
+        <i class="fas fa-dice-d20 fa-xl" style="color: #e4b13b;"></i>
+      </div>
+      <span class="logo-text">Play<span>bazar</span>live</span>
+    </a>
+    
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <div class="date-badge d-none d-md-block">
+        <i class="far fa-calendar-alt me-2"></i>19/04/2026
+      </div>
+      <a href="#" class="btn btn-outline-gold px-4 py-2">
+        LOGIN <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Action Buttons Row (Past Result / Show Result / Print Chart) -->
+<div class="container mt-4">
+  <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+    <div>
+      <button class="btn btn-light border px-4 py-2 me-2 shadow-sm"><i class="fas fa-history me-2"></i>PAST RESULT</button>
+      <button class="btn btn-primary px-4 py-2 me-2 shadow-sm" style="background-color: #1e3a5f; border-color: #1e3a5f;"><i class="fas fa-chart-line me-2"></i>SHOW RESULT</button>
+      <button class="btn btn-outline-secondary px-4 py-2 shadow-sm"><i class="fas fa-print me-2"></i>PRINT CHART</button>
+    </div>
+    <!-- Mobile Date -->
+    <div class="d-md-none bg-dark text-white px-4 py-2 rounded-3">
+      <i class="far fa-calendar-alt me-2"></i>19/04/2026
+    </div>
+  </div>
+</div>
+
+<!-- Main Chart Card -->
+<div class="container mt-4">
+  <div class="card border-0 shadow-lg">
+    <div class="card-header-custom">
+      <i class="fas fa-table me-2"></i> Satta Matka Result Chart • April 2026
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-chart mb-0">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding-left:16px;">MARKET</th>
+              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th class="result-highlight">19</th>
+              <th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Desawar -->
+            <tr>
+              <td class="market-name">Desawar</td>
+              <td>-</td><td>81</td><td>41</td><td>97</td><td>71</td><td>47</td><td>44</td><td>05</td><td>67</td><td>85</td>
+              <td>85</td><td>92</td><td>82</td><td>00</td><td>49</td><td>93</td><td>99</td><td>15</td>
+              <td class="result-highlight"><strong>93</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- GOLD BAZAR -->
+            <tr>
+              <td class="market-name">GOLD BAZAR</td>
+              <td>94</td><td>88</td><td>66</td><td>75</td><td>59</td><td>42</td><td>79</td><td>83</td><td>33</td><td>71</td>
+              <td>28</td><td>83</td><td>68</td><td>63</td><td>37</td><td>68</td><td>28</td><td>15</td>
+              <td class="result-highlight"><strong>27</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- LUCKY KING -->
+            <tr>
+              <td class="market-name">LUCKY KING</td>
+              <td>47</td><td>12</td><td>07</td><td>20</td><td>97</td><td>09</td><td>20</td><td>52</td><td>57</td><td>00</td>
+              <td>56</td><td>38</td><td>49</td><td>12</td><td>00</td><td>87</td><td>56</td><td>15</td>
+              <td class="result-highlight"><strong>15</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- DELHI BAZAR -->
+            <tr>
+              <td class="market-name">DELHI BAZAR</td>
+              <td>39</td><td>11</td><td>71</td><td>83</td><td>67</td><td>11</td><td>76</td><td>30</td><td>43</td><td>27</td>
+              <td>30</td><td>63</td><td>06</td><td>20</td><td>59</td><td>30</td><td>55</td><td>97</td>
+              <td class="result-highlight"><strong>97</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- TAJ MAHAL -->
+            <tr>
+              <td class="market-name">TAJ MAHAL</td>
+              <td>-</td><td>99</td><td>33</td><td>84</td><td>06</td><td>09</td><td>23</td><td>94</td><td>58</td><td>58</td>
+              <td>63</td><td>61</td><td>49</td><td>74</td><td>44</td><td>46</td><td>42</td><td>51</td>
+              <td class="result-highlight"><strong>15</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- FARIDABAD -->
+            <tr>
+              <td class="market-name">FARIDABAD</td>
+              <td>35</td><td>33</td><td>99</td><td>59</td><td>29</td><td>39</td><td>07</td><td>91</td><td>47</td><td>05</td>
+              <td>04</td><td>65</td><td>33</td><td>04</td><td>64</td><td>03</td><td>44</td><td>21</td>
+              <td class="result-highlight"><strong>21</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- NOIDA BAZAR -->
+            <tr>
+              <td class="market-name">NOIDA BAZAR</td>
+              <td>87</td><td>33</td><td>66</td><td>14</td><td>19</td><td>79</td><td>62</td><td>19</td><td>46</td><td>36</td>
+              <td>20</td><td>07</td><td>19</td><td>70</td><td>55</td><td>39</td><td>07</td><td>05</td>
+              <td class="result-highlight"><strong>05</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- GAZIYABAD -->
+            <tr>
+              <td class="market-name">GAZIYABAD</td>
+              <td>12</td><td>78</td><td>00</td><td>77</td><td>17</td><td>59</td><td>26</td><td>88</td><td>97</td><td>77</td>
+              <td>53</td><td>52</td><td>14</td><td>73</td><td>19</td><td>14</td><td>47</td><td>62</td>
+              <td class="result-highlight"><strong>62</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+            <!-- GALI -->
+            <tr>
+              <td class="market-name">GALI</td>
+              <td>97</td><td>63</td><td>62</td><td>75</td><td>59</td><td>46</td><td>01</td><td>42</td><td>47</td><td>11</td>
+              <td>24</td><td>06</td><td>39</td><td>02</td><td>82</td><td>15</td><td>40</td><td>69</td>
+              <td class="result-highlight"><strong>69</strong></td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Advertise Here placeholder -->
+    <div class="card-footer bg-light text-center py-3">
+      <span class="text-secondary fw-semibold"><i class="fas fa-bullhorn me-2 text-warning"></i> ADVERTISE HERE</span>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp / Telegram Section -->
+<div class="container mt-4 mb-4">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="advertise-card p-4 d-flex align-items-center">
+        <i class="fab fa-whatsapp fa-3x me-3" style="color:#25D366;"></i>
+        <div>
+          <h5 class="fw-bold mb-1">💬 JOIN OUR WHATSAPP</h5>
+          <p class="text-secondary mb-2">दिलचस्प खबरें पाएं</p>
+          <a href="#" class="btn btn-wa btn-social"><i class="fab fa-whatsapp me-2"></i>Join Group</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="advertise-card p-4 d-flex align-items-center">
+        <i class="fab fa-telegram-plane fa-3x me-3" style="color:#0088cc;"></i>
+        <div>
+          <h5 class="fw-bold mb-1">✈️ JOIN OUR TELEGRAM</h5>
+          <p class="text-secondary mb-2">सर्वश्रेष्ठ अपडेट और सुझाव प्राप्त करें</p>
+          <a href="#" class="btn btn-tg btn-social"><i class="fab fa-telegram-plane me-2"></i>Join Channel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Banner Image Placeholder -->
+<div class="container mb-4">
+  <div class="card bg-dark text-white border-0" style="border-radius: 24px; background: linear-gradient(145deg, #1e293b, #0f172a);">
+    <div class="card-body text-center py-5">
+      <i class="fas fa-image fa-3x mb-3 opacity-50"></i>
+      <h4 class="fw-light">Banner Image</h4>
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer -->
+<div class="container mb-5">
+  <div class="disclaimer text-center py-4">
+    <p class="mb-1 fw-semibold">Disclaimer</p>
+    <p class="small">This website is only for informational and entertainment purposes. We do not promote or support any kind of illegal gambling or betting activities. Users are solely responsible for their actions and decisions. All the results and information provided on this website are based on personal analysis and sources. We are not responsible for any profit or loss. If gambling or betting is illegal in your area, please do not use this website. You must be 18+ to use this platform. By using this website, you agree that you are doing so at your own risk.</p>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
