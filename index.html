@@ -3,317 +3,533 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Play Bazar Live • Satta Matka Chart</title>
-  <!-- Bootstrap 5 CSS -->
+  <title>Playbazar Live • Premium Matka</title>
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
     body {
-      background-color: #f4f6f9;
-      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      padding: 20px 0 40px;
     }
-    .navbar-brand img {
-      height: 40px;
-      margin-right: 8px;
+
+    /* Glassmorphism Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
+
+    /* Logo Styling */
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(246, 211, 101, 0.3);
+    }
+    
+    .logo-icon i {
+      font-size: 28px;
+      color: #1a1a2e;
+    }
+    
     .logo-text {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #0d2e4e;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, #f6d365 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       letter-spacing: -0.5px;
     }
-    .logo-text span {
-      color: #c59b2b;
-    }
-    .date-badge {
-      background: #0d2e4e;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    .card-header-custom {
-      background: linear-gradient(145deg, #13294b 0%, #1b3a62 100%);
-      color: white;
-      padding: 12px 20px;
-      font-weight: 600;
-      border-radius: 12px 12px 0 0 !important;
-    }
-    .table-chart {
-      margin-bottom: 0;
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
-    .table-chart th {
-      background-color: #1e3a5f;
-      color: white;
-      font-weight: 500;
-      text-align: center;
-      padding: 6px 3px;
-    }
-    .table-chart td {
-      text-align: center;
-      padding: 8px 3px;
-      background-color: white;
-      border-bottom: 1px solid #dee2e6;
-      font-weight: 500;
-    }
-    .market-name {
+
+    /* Date Display */
+    .date-display {
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      padding: 12px 24px;
+      border-radius: 50px;
       font-weight: 700;
-      color: #0a1e31;
-      background-color: #e9ecef !important;
+      color: #1a1a2e;
+      box-shadow: 0 8px 20px rgba(246, 211, 101, 0.25);
+    }
+
+    /* Login Button */
+    .btn-login {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-login:hover {
+      background: white;
+      color: #1a1a2e;
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Action Buttons */
+    .action-btn {
+      padding: 14px 28px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn-past {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-past:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    
+    .btn-show {
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      color: #1a1a2e;
+      box-shadow: 0 10px 25px rgba(246, 211, 101, 0.3);
+    }
+    
+    .btn-show:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(246, 211, 101, 0.4);
+    }
+    
+    .btn-print {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Table Styling */
+    .table-wrapper {
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(10, 10, 25, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .matka-table {
+      margin-bottom: 0;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    
+    .matka-table thead th {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #f6d365;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 18px 8px;
+      border-bottom: 2px solid #f6d365;
+      text-align: center;
+    }
+    
+    .matka-table tbody tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.2s ease;
+    }
+    
+    .matka-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .matka-table td {
+      padding: 14px 6px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      font-size: 14px;
+      text-align: center;
+      border: none;
+    }
+    
+    .market-cell {
+      background: linear-gradient(135deg, #1a1a2e, #0f0f1a) !important;
+      color: #f6d365 !important;
+      font-weight: 800 !important;
+      font-size: 15px !important;
       text-align: left !important;
-      padding-left: 12px !important;
+      padding-left: 20px !important;
       position: sticky;
       left: 0;
+      border-right: 2px solid rgba(246, 211, 101, 0.3);
     }
-    .result-highlight {
-      background-color: #fffbeb;
-      font-weight: 700;
-      color: #b45309;
+    
+    .today-result {
+      background: linear-gradient(135deg, #f6d365, #fda085) !important;
+      color: #1a1a2e !important;
+      font-weight: 800 !important;
+      font-size: 16px !important;
+      box-shadow: 0 0 20px rgba(246, 211, 101, 0.4);
+      border-radius: 8px;
     }
-    .table-responsive {
-      border-radius: 12px;
-      border: 1px solid #cfdde9;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+
+    /* WhatsApp & Telegram Cards */
+    .social-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 28px;
+      padding: 30px;
+      transition: all 0.3s ease;
     }
-    .btn-social {
-      border-radius: 40px;
-      padding: 10px 20px;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    
+    .social-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(246, 211, 101, 0.5);
     }
-    .btn-wa {
-      background-color: #25D366;
-      color: white;
-      border: none;
-    }
-    .btn-wa:hover {
-      background-color: #1da95c;
-      color: white;
-    }
-    .btn-tg {
-      background-color: #0088cc;
-      color: white;
-      border: none;
-    }
-    .btn-tg:hover {
-      background-color: #006699;
-      color: white;
-    }
-    .advertise-card {
-      background: white;
+    
+    .social-icon {
+      width: 70px;
+      height: 70px;
       border-radius: 20px;
-      border-left: 6px solid #b8860b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
     }
-    .disclaimer {
-      font-size: 0.8rem;
-      color: #5e6f7e;
-      border-top: 1px dashed #adb5bd;
+    
+    .wa-icon {
+      background: linear-gradient(135deg, #075E54, #128C7E, #25D366);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
     }
-    .nav-link {
-      font-weight: 500;
-      color: #1e3a5f;
+    
+    .tg-icon {
+      background: linear-gradient(135deg, #0088cc, #00aaff);
+      box-shadow: 0 15px 30px rgba(0, 136, 204, 0.3);
     }
-    .btn-outline-gold {
-      border: 2px solid #c59b2b;
-      color: #0d2e4e;
-      font-weight: 600;
-      border-radius: 30px;
-    }
-    .btn-outline-gold:hover {
-      background-color: #c59b2b;
+    
+    .btn-social {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-social:hover {
+      background: white;
+      color: #1a1a2e;
+    }
+
+    /* Banner */
+    .banner-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 32px;
+      padding: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .banner-gradient::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Advertise Badge */
+    .ad-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      color: #1a1a2e;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin: 20px 0;
+    }
+
+    /* Disclaimer */
+    .disclaimer-box {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   </style>
 </head>
 <body>
 
-<!-- Header / Navigation -->
-<nav class="navbar navbar-expand-lg bg-white py-2 shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <!-- Simple Logo Placeholder (Playbazarlive Logo style) -->
-      <div class="bg-dark rounded-3 p-2 me-2 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px; background: linear-gradient(145deg, #0b1f33, #1f3a57) !important;">
-        <i class="fas fa-dice-d20 fa-xl" style="color: #e4b13b;"></i>
+<div class="container">
+  
+  <!-- Header Section -->
+  <div class="glass-card p-4 mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div class="logo-wrapper">
+        <div class="logo-icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <span class="logo-text">Playbazar<span style="color: #f6d365; -webkit-text-fill-color: #f6d365;">Live</span></span>
       </div>
-      <span class="logo-text">Play<span>bazar</span>live</span>
-    </a>
+      
+      <div class="d-flex align-items-center gap-3">
+        <div class="date-display">
+          <i class="far fa-calendar-alt me-2"></i>19 APR 2026
+        </div>
+        <button class="btn btn-login">
+          LOGIN <i class="fas fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="d-flex flex-wrap gap-3 mb-4 justify-content-center justify-content-md-start">
+    <button class="action-btn btn-past">
+      <i class="fas fa-history me-2"></i>PAST RESULT
+    </button>
+    <button class="action-btn btn-show">
+      <i class="fas fa-chart-simple me-2"></i>SHOW RESULT
+    </button>
+    <button class="action-btn btn-print">
+      <i class="fas fa-print me-2"></i>PRINT CHART
+    </button>
+  </div>
+
+  <!-- Matka Chart Section -->
+  <div class="glass-card p-3 p-md-4 mb-4">
+    <h4 class="text-white mb-4 d-flex align-items-center">
+      <i class="fas fa-table me-3" style="color: #f6d365;"></i>
+      <span class="text-gradient fw-bold">LIVE RESULT CHART • APRIL 2026</span>
+      <span class="ms-auto badge" style="background: rgba(246,211,101,0.2); color: #f6d365; padding: 8px 16px;">
+        <i class="fas fa-circle me-2" style="font-size: 8px; color: #25D366;"></i>LIVE
+      </span>
+    </h4>
     
-    <div class="ms-auto d-flex align-items-center gap-3">
-      <div class="date-badge d-none d-md-block">
-        <i class="far fa-calendar-alt me-2"></i>19/04/2026
-      </div>
-      <a href="#" class="btn btn-outline-gold px-4 py-2">
-        LOGIN <i class="fas fa-arrow-right ms-2"></i>
-      </a>
-    </div>
-  </div>
-</nav>
-
-<!-- Action Buttons Row (Past Result / Show Result / Print Chart) -->
-<div class="container mt-4">
-  <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
-    <div>
-      <button class="btn btn-light border px-4 py-2 me-2 shadow-sm"><i class="fas fa-history me-2"></i>PAST RESULT</button>
-      <button class="btn btn-primary px-4 py-2 me-2 shadow-sm" style="background-color: #1e3a5f; border-color: #1e3a5f;"><i class="fas fa-chart-line me-2"></i>SHOW RESULT</button>
-      <button class="btn btn-outline-secondary px-4 py-2 shadow-sm"><i class="fas fa-print me-2"></i>PRINT CHART</button>
-    </div>
-    <!-- Mobile Date -->
-    <div class="d-md-none bg-dark text-white px-4 py-2 rounded-3">
-      <i class="far fa-calendar-alt me-2"></i>19/04/2026
-    </div>
-  </div>
-</div>
-
-<!-- Main Chart Card -->
-<div class="container mt-4">
-  <div class="card border-0 shadow-lg">
-    <div class="card-header-custom">
-      <i class="fas fa-table me-2"></i> Satta Matka Result Chart • April 2026
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table class="table table-chart mb-0">
+    <div class="table-wrapper">
+      <div style="overflow-x: auto;">
+        <table class="matka-table w-100">
           <thead>
             <tr>
-              <th style="text-align:left; padding-left:16px;">MARKET</th>
-              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th class="result-highlight">19</th>
-              <th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+              <th style="text-align: left; padding-left: 20px;">MARKET</th>
+              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+              <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+              <th>16</th><th>17</th><th>18</th><th style="color: #f6d365;">19</th>
+              <th>20</th><th>21</th><th>22</th><th>23</th><th>24</th>
+              <th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
             </tr>
           </thead>
           <tbody>
             <!-- Desawar -->
             <tr>
-              <td class="market-name">Desawar</td>
-              <td>-</td><td>81</td><td>41</td><td>97</td><td>71</td><td>47</td><td>44</td><td>05</td><td>67</td><td>85</td>
-              <td>85</td><td>92</td><td>82</td><td>00</td><td>49</td><td>93</td><td>99</td><td>15</td>
-              <td class="result-highlight"><strong>93</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-dice me-2"></i>Desawar</td>
+              <td>-</td><td>81</td><td>41</td><td>97</td><td>71</td>
+              <td>47</td><td>44</td><td>05</td><td>67</td><td>85</td>
+              <td>85</td><td>92</td><td>82</td><td>00</td><td>49</td>
+              <td>93</td><td>99</td><td>15</td><td class="today-result">93</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- GOLD BAZAR -->
             <tr>
-              <td class="market-name">GOLD BAZAR</td>
-              <td>94</td><td>88</td><td>66</td><td>75</td><td>59</td><td>42</td><td>79</td><td>83</td><td>33</td><td>71</td>
-              <td>28</td><td>83</td><td>68</td><td>63</td><td>37</td><td>68</td><td>28</td><td>15</td>
-              <td class="result-highlight"><strong>27</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-coins me-2"></i>GOLD BAZAR</td>
+              <td>94</td><td>88</td><td>66</td><td>75</td><td>59</td>
+              <td>42</td><td>79</td><td>83</td><td>33</td><td>71</td>
+              <td>28</td><td>83</td><td>68</td><td>63</td><td>37</td>
+              <td>68</td><td>28</td><td>15</td><td class="today-result">27</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- LUCKY KING -->
             <tr>
-              <td class="market-name">LUCKY KING</td>
-              <td>47</td><td>12</td><td>07</td><td>20</td><td>97</td><td>09</td><td>20</td><td>52</td><td>57</td><td>00</td>
-              <td>56</td><td>38</td><td>49</td><td>12</td><td>00</td><td>87</td><td>56</td><td>15</td>
-              <td class="result-highlight"><strong>15</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-clover me-2"></i>LUCKY KING</td>
+              <td>47</td><td>12</td><td>07</td><td>20</td><td>97</td>
+              <td>09</td><td>20</td><td>52</td><td>57</td><td>00</td>
+              <td>56</td><td>38</td><td>49</td><td>12</td><td>00</td>
+              <td>87</td><td>56</td><td>15</td><td class="today-result">15</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- DELHI BAZAR -->
             <tr>
-              <td class="market-name">DELHI BAZAR</td>
-              <td>39</td><td>11</td><td>71</td><td>83</td><td>67</td><td>11</td><td>76</td><td>30</td><td>43</td><td>27</td>
-              <td>30</td><td>63</td><td>06</td><td>20</td><td>59</td><td>30</td><td>55</td><td>97</td>
-              <td class="result-highlight"><strong>97</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-building me-2"></i>DELHI BAZAR</td>
+              <td>39</td><td>11</td><td>71</td><td>83</td><td>67</td>
+              <td>11</td><td>76</td><td>30</td><td>43</td><td>27</td>
+              <td>30</td><td>63</td><td>06</td><td>20</td><td>59</td>
+              <td>30</td><td>55</td><td>97</td><td class="today-result">97</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- TAJ MAHAL -->
             <tr>
-              <td class="market-name">TAJ MAHAL</td>
-              <td>-</td><td>99</td><td>33</td><td>84</td><td>06</td><td>09</td><td>23</td><td>94</td><td>58</td><td>58</td>
-              <td>63</td><td>61</td><td>49</td><td>74</td><td>44</td><td>46</td><td>42</td><td>51</td>
-              <td class="result-highlight"><strong>15</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-landmark me-2"></i>TAJ MAHAL</td>
+              <td>-</td><td>99</td><td>33</td><td>84</td><td>06</td>
+              <td>09</td><td>23</td><td>94</td><td>58</td><td>58</td>
+              <td>63</td><td>61</td><td>49</td><td>74</td><td>44</td>
+              <td>46</td><td>42</td><td>51</td><td class="today-result">15</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- FARIDABAD -->
             <tr>
-              <td class="market-name">FARIDABAD</td>
-              <td>35</td><td>33</td><td>99</td><td>59</td><td>29</td><td>39</td><td>07</td><td>91</td><td>47</td><td>05</td>
-              <td>04</td><td>65</td><td>33</td><td>04</td><td>64</td><td>03</td><td>44</td><td>21</td>
-              <td class="result-highlight"><strong>21</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-city me-2"></i>FARIDABAD</td>
+              <td>35</td><td>33</td><td>99</td><td>59</td><td>29</td>
+              <td>39</td><td>07</td><td>91</td><td>47</td><td>05</td>
+              <td>04</td><td>65</td><td>33</td><td>04</td><td>64</td>
+              <td>03</td><td>44</td><td>21</td><td class="today-result">21</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- NOIDA BAZAR -->
             <tr>
-              <td class="market-name">NOIDA BAZAR</td>
-              <td>87</td><td>33</td><td>66</td><td>14</td><td>19</td><td>79</td><td>62</td><td>19</td><td>46</td><td>36</td>
-              <td>20</td><td>07</td><td>19</td><td>70</td><td>55</td><td>39</td><td>07</td><td>05</td>
-              <td class="result-highlight"><strong>05</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-motorcycle me-2"></i>NOIDA BAZAR</td>
+              <td>87</td><td>33</td><td>66</td><td>14</td><td>19</td>
+              <td>79</td><td>62</td><td>19</td><td>46</td><td>36</td>
+              <td>20</td><td>07</td><td>19</td><td>70</td><td>55</td>
+              <td>39</td><td>07</td><td>05</td><td class="today-result">05</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- GAZIYABAD -->
             <tr>
-              <td class="market-name">GAZIYABAD</td>
-              <td>12</td><td>78</td><td>00</td><td>77</td><td>17</td><td>59</td><td>26</td><td>88</td><td>97</td><td>77</td>
-              <td>53</td><td>52</td><td>14</td><td>73</td><td>19</td><td>14</td><td>47</td><td>62</td>
-              <td class="result-highlight"><strong>62</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-train me-2"></i>GAZIYABAD</td>
+              <td>12</td><td>78</td><td>00</td><td>77</td><td>17</td>
+              <td>59</td><td>26</td><td>88</td><td>97</td><td>77</td>
+              <td>53</td><td>52</td><td>14</td><td>73</td><td>19</td>
+              <td>14</td><td>47</td><td>62</td><td class="today-result">62</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
             <!-- GALI -->
             <tr>
-              <td class="market-name">GALI</td>
-              <td>97</td><td>63</td><td>62</td><td>75</td><td>59</td><td>46</td><td>01</td><td>42</td><td>47</td><td>11</td>
-              <td>24</td><td>06</td><td>39</td><td>02</td><td>82</td><td>15</td><td>40</td><td>69</td>
-              <td class="result-highlight"><strong>69</strong></td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td class="market-cell"><i class="fas fa-star me-2"></i>GALI</td>
+              <td>97</td><td>63</td><td>62</td><td>75</td><td>59</td>
+              <td>46</td><td>01</td><td>42</td><td>47</td><td>11</td>
+              <td>24</td><td>06</td><td>39</td><td>02</td><td>82</td>
+              <td>15</td><td>40</td><td>69</td><td class="today-result">69</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!-- Advertise Here placeholder -->
-    <div class="card-footer bg-light text-center py-3">
-      <span class="text-secondary fw-semibold"><i class="fas fa-bullhorn me-2 text-warning"></i> ADVERTISE HERE</span>
+    
+    <!-- Advertise Here -->
+    <div class="text-center mt-4">
+      <span class="ad-badge">
+        <i class="fas fa-bullhorn me-3"></i>ADVERTISE HERE<i class="fas fa-bullhorn ms-3"></i>
+      </span>
     </div>
   </div>
-</div>
 
-<!-- WhatsApp / Telegram Section -->
-<div class="container mt-4 mb-4">
-  <div class="row g-4">
+  <!-- WhatsApp & Telegram Section -->
+  <div class="row g-4 mb-4">
     <div class="col-md-6">
-      <div class="advertise-card p-4 d-flex align-items-center">
-        <i class="fab fa-whatsapp fa-3x me-3" style="color:#25D366;"></i>
-        <div>
-          <h5 class="fw-bold mb-1">💬 JOIN OUR WHATSAPP</h5>
-          <p class="text-secondary mb-2">दिलचस्प खबरें पाएं</p>
-          <a href="#" class="btn btn-wa btn-social"><i class="fab fa-whatsapp me-2"></i>Join Group</a>
+      <div class="social-card">
+        <div class="d-flex align-items-start gap-4">
+          <div class="social-icon wa-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3 class="text-white fw-bold mb-2">💬 WhatsApp Group</h3>
+            <p class="text-white-50 mb-4">दिलचस्प खबरें और लाइव अपडेट पाएं</p>
+            <button class="btn-social">
+              <i class="fab fa-whatsapp me-2"></i>Join Now →
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="advertise-card p-4 d-flex align-items-center">
-        <i class="fab fa-telegram-plane fa-3x me-3" style="color:#0088cc;"></i>
-        <div>
-          <h5 class="fw-bold mb-1">✈️ JOIN OUR TELEGRAM</h5>
-          <p class="text-secondary mb-2">सर्वश्रेष्ठ अपडेट और सुझाव प्राप्त करें</p>
-          <a href="#" class="btn btn-tg btn-social"><i class="fab fa-telegram-plane me-2"></i>Join Channel</a>
+      <div class="social-card">
+        <div class="d-flex align-items-start gap-4">
+          <div class="social-icon tg-icon">
+            <i class="fab fa-telegram-plane"></i>
+          </div>
+          <div>
+            <h3 class="text-white fw-bold mb-2">✈️ Telegram Channel</h3>
+            <p class="text-white-50 mb-4">सर्वश्रेष्ठ अपडेट और फास्ट रिजल्ट प्राप्त करें</p>
+            <button class="btn-social">
+              <i class="fab fa-telegram-plane me-2"></i>Join Channel →
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Banner Image Placeholder -->
-<div class="container mb-4">
-  <div class="card bg-dark text-white border-0" style="border-radius: 24px; background: linear-gradient(145deg, #1e293b, #0f172a);">
-    <div class="card-body text-center py-5">
-      <i class="fas fa-image fa-3x mb-3 opacity-50"></i>
-      <h4 class="fw-light">Banner Image</h4>
+  <!-- Banner Image -->
+  <div class="banner-gradient mb-4">
+    <div style="position: relative; z-index: 1;">
+      <h2 class="text-white fw-bold display-6 mb-3">🎯 आज का स्पेशल गेम</h2>
+      <p class="text-white-50 fs-5">सबसे तेज़ और सटीक रिजल्ट के लिए जुड़े रहें</p>
+      <button class="btn btn-light px-5 py-3 mt-3 rounded-pill fw-bold">
+        VIEW NOW <i class="fas fa-arrow-right ms-2"></i>
+      </button>
     </div>
   </div>
-</div>
 
-<!-- Disclaimer -->
-<div class="container mb-5">
-  <div class="disclaimer text-center py-4">
-    <p class="mb-1 fw-semibold">Disclaimer</p>
-    <p class="small">This website is only for informational and entertainment purposes. We do not promote or support any kind of illegal gambling or betting activities. Users are solely responsible for their actions and decisions. All the results and information provided on this website are based on personal analysis and sources. We are not responsible for any profit or loss. If gambling or betting is illegal in your area, please do not use this website. You must be 18+ to use this platform. By using this website, you agree that you are doing so at your own risk.</p>
+  <!-- Disclaimer -->
+  <div class="disclaimer-box">
+    <div class="d-flex align-items-center gap-3 mb-3">
+      <i class="fas fa-shield-alt fa-2x" style="color: #f6d365;"></i>
+      <h5 class="text-white mb-0 fw-bold">⚠️ महत्वपूर्ण सूचना</h5>
+    </div>
+    <p class="text-white-50 mb-0" style="font-size: 14px; line-height: 1.8;">
+      This website is only for informational and entertainment purposes. We do not promote or support any kind of illegal gambling or betting activities. Users are solely responsible for their actions and decisions. All the results and information provided on this website are based on personal analysis and sources. We are not responsible for any profit or loss. If gambling or betting is illegal in your area, please do not use this website. You must be 18+ to use this platform. By using this website, you agree that you are doing so at your own risk.
+    </p>
   </div>
+
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
