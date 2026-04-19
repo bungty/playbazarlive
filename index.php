@@ -322,8 +322,8 @@
         <div class="date-display">
           <i class="far fa-calendar-alt me-2"></i>19 APR 2026
         </div>
-        <button class="btn btn-login">
-            <a class="btn-login" href="login.html">
+        <button class="date-display">
+            <a class="btn bth-warning" href="login.php">
           LOGIN <i class="fas fa-arrow-right ms-2"></i>
             </a>
         </button>
@@ -354,115 +354,79 @@
       </span>
     </h4>
     
-    <div class="table-wrapper">
-      <div style="overflow-x: auto;">
-        <table class="matka-table w-100">
-          <thead>
-            <tr>
-              <th style="text-align: left; padding-left: 20px;">MARKET</th>
-              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-              <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
-              <th>16</th><th>17</th><th>18</th><th style="color: #f6d365;">19</th>
-              <th>20</th><th>21</th><th>22</th><th>23</th><th>24</th>
-              <th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Desawar -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-dice me-2"></i>Desawar</td>
-              <td>-</td><td>81</td><td>41</td><td>97</td><td>71</td>
-              <td>47</td><td>44</td><td>05</td><td>67</td><td>85</td>
-              <td>85</td><td>92</td><td>82</td><td>00</td><td>49</td>
-              <td>93</td><td>99</td><td>15</td><td class="today-result">93</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- GOLD BAZAR -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-coins me-2"></i>GOLD BAZAR</td>
-              <td>94</td><td>88</td><td>66</td><td>75</td><td>59</td>
-              <td>42</td><td>79</td><td>83</td><td>33</td><td>71</td>
-              <td>28</td><td>83</td><td>68</td><td>63</td><td>37</td>
-              <td>68</td><td>28</td><td>15</td><td class="today-result">27</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- LUCKY KING -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-clover me-2"></i>LUCKY KING</td>
-              <td>47</td><td>12</td><td>07</td><td>20</td><td>97</td>
-              <td>09</td><td>20</td><td>52</td><td>57</td><td>00</td>
-              <td>56</td><td>38</td><td>49</td><td>12</td><td>00</td>
-              <td>87</td><td>56</td><td>15</td><td class="today-result">15</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- DELHI BAZAR -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-building me-2"></i>DELHI BAZAR</td>
-              <td>39</td><td>11</td><td>71</td><td>83</td><td>67</td>
-              <td>11</td><td>76</td><td>30</td><td>43</td><td>27</td>
-              <td>30</td><td>63</td><td>06</td><td>20</td><td>59</td>
-              <td>30</td><td>55</td><td>97</td><td class="today-result">97</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- TAJ MAHAL -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-landmark me-2"></i>TAJ MAHAL</td>
-              <td>-</td><td>99</td><td>33</td><td>84</td><td>06</td>
-              <td>09</td><td>23</td><td>94</td><td>58</td><td>58</td>
-              <td>63</td><td>61</td><td>49</td><td>74</td><td>44</td>
-              <td>46</td><td>42</td><td>51</td><td class="today-result">15</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- FARIDABAD -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-city me-2"></i>FARIDABAD</td>
-              <td>35</td><td>33</td><td>99</td><td>59</td><td>29</td>
-              <td>39</td><td>07</td><td>91</td><td>47</td><td>05</td>
-              <td>04</td><td>65</td><td>33</td><td>04</td><td>64</td>
-              <td>03</td><td>44</td><td>21</td><td class="today-result">21</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- NOIDA BAZAR -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-motorcycle me-2"></i>NOIDA BAZAR</td>
-              <td>87</td><td>33</td><td>66</td><td>14</td><td>19</td>
-              <td>79</td><td>62</td><td>19</td><td>46</td><td>36</td>
-              <td>20</td><td>07</td><td>19</td><td>70</td><td>55</td>
-              <td>39</td><td>07</td><td>05</td><td class="today-result">05</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- GAZIYABAD -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-train me-2"></i>GAZIYABAD</td>
-              <td>12</td><td>78</td><td>00</td><td>77</td><td>17</td>
-              <td>59</td><td>26</td><td>88</td><td>97</td><td>77</td>
-              <td>53</td><td>52</td><td>14</td><td>73</td><td>19</td>
-              <td>14</td><td>47</td><td>62</td><td class="today-result">62</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-            <!-- GALI -->
-            <tr>
-              <td class="market-cell"><i class="fas fa-star me-2"></i>GALI</td>
-              <td>97</td><td>63</td><td>62</td><td>75</td><td>59</td>
-              <td>46</td><td>01</td><td>42</td><td>47</td><td>11</td>
-              <td>24</td><td>06</td><td>39</td><td>02</td><td>82</td>
-              <td>15</td><td>40</td><td>69</td><td class="today-result">69</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-              <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <?php
+include "db.php";
+
+// current month/year
+$year = 2026;
+$month = 4;
+
+// total days
+$days = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+
+// fetch markets
+$markets = mysqli_query($conn, "SELECT * FROM markets");
+?>
+
+<div class="table-wrapper">
+<div style="overflow-x:auto;">
+<table class="matka-table w-100">
+
+<thead>
+<tr>
+    <th style="text-align:left; padding-left:20px;">MARKET</th>
+    
+    <?php for($d=1; $d <= $days; $d++) { ?>
+        <th <?php if($d == date('d')) echo 'style="color:#f6d365;"'; ?>>
+            <?php echo $d; ?>
+        </th>
+    <?php } ?>
+</tr>
+</thead>
+
+<tbody>
+
+<?php while($m = mysqli_fetch_assoc($markets)) { ?>
+
+<tr>
+
+<td class="market-cell">
+    <?php echo $m['name']; ?>
+</td>
+
+<?php for($d=1; $d <= $days; $d++) {
+
+    $date = $year.'-'.$month.'-'.str_pad($d,2,'0',STR_PAD_LEFT);
+
+    $res = mysqli_query($conn, "
+        SELECT result_value 
+        FROM results 
+        WHERE market_id=".$m['id']." 
+        AND result_date='$date'
+    ");
+
+    $row = mysqli_fetch_assoc($res);
+
+    $value = $row['result_value'] ?? '-';
+
+    // highlight today column
+    $class = ($d == date('d')) ? 'today-result' : '';
+?>
+
+<td class="<?php echo $class; ?>">
+    <?php echo $value; ?>
+</td>
+
+<?php } ?>
+
+</tr>
+
+<?php } ?>
+
+</tbody>
+</table>
+</div>
+</div>
     
     <!-- Advertise Here -->
     <div class="text-center mt-4">
@@ -511,6 +475,10 @@
   <!-- Banner Image -->
   <div class="banner-gradient mb-4">
     <div style="position: relative; z-index: 1;">
+      <img src="images/footer-banner.jpeg" width="100%"  alt="Special Game" class="img-fluid rounded-3 mb-4" style="box-shadow: 0 
+           alt="Special Game" 
+           class="img-fluid rounded-3 mb-4" 
+           style="box-shadow: 0 15px 30px rgba(246, 211, 101, 0.3);">
       <h2 class="text-white fw-bold display-6 mb-3">🎯 आज का स्पेशल गेम</h2>
       <p class="text-white-50 fs-5">सबसे तेज़ और सटीक रिजल्ट के लिए जुड़े रहें</p>
       <button class="btn btn-light px-5 py-3 mt-3 rounded-pill fw-bold">
